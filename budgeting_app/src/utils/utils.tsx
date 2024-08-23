@@ -21,7 +21,10 @@ export type Expense = {
 };
 
 export function fetchDataFromLocalStorage(key: string) {
-  return JSON.parse(localStorage.getItem(key)!);
+  if(key === "user") {
+    return JSON.parse(localStorage.getItem(key) ?? "null");
+  }
+  return JSON.parse(localStorage.getItem(key) ?? "[]");
 }
 
 export function deleteUserDataFromLocalStorage() {

@@ -17,11 +17,10 @@ export default function AddExpenseForm({ budgets }: { budgets: Budget[] }) {
     <>
       <div className="max-w-sm lg:max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-          Add new
-          <span>
-            {budgets.length === 1 &&
-              `${budgets.map((budget) => budget.category)}`}
-          </span>
+          Add new {""}
+          {budgets.length === 1 &&
+            `${budgets.map((budget) => budget.category)}`}{" "}
+          {""}
           expense
         </h2>
         <fetcher.Form method="POST" ref={formRef}>
