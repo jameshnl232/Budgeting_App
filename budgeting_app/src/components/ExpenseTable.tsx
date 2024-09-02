@@ -14,10 +14,10 @@ export default function ExpenseTable({
 
   return (
     <>
-      <div className="flex justfify-center items-center py-10 ">
-        <table className="w-full bg-white shadow-md rounded-lg mx-20">
+      <div className="flex overflow-x-auto justfify-center items-center py-10 px-20">
+        <table className=" w-full bg-white shadow-md rounded-lg">
           <thead>
-            <tr className="text-2xl font-semibold text-left">
+            <tr className="text-2xl font-semibold text-left ">
               <th className="py-4 px-6">Expense</th>
               <th className="py-4 px-6">Amount</th>
               <th className="py-4 px-6">Category</th>
@@ -40,13 +40,14 @@ export default function ExpenseTable({
                     {new Date(expense.createdAt).toLocaleDateString()}
                   </td>
                   <td className="py-4 px-6">
-                    <fetcher.Form method="POST"> 
-                      <button
-                        className="text-red-500"
-                      
-                      >
+                    <fetcher.Form method="POST">
+                      <button className="text-red-500">
                         <input type="hidden" name="id" value={expense.id} />
-                        <input type="hidden" name="_action" value="delete-expense" />
+                        <input
+                          type="hidden"
+                          name="_action"
+                          value="delete-expense"
+                        />
                         <div className="flex gap-2 items-center justify-center content-center">
                           <span>Delete</span>
                           <TrashIcon height={20} width={20} />
